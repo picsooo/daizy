@@ -1,0 +1,211 @@
+@font-face{font-family:"Lalezar";src:url(../fonts/lalezar-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122;font-display:swap}
+@font-face{font-family:"Lalezar";src:url(../fonts/lalezar-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-024F,U+1E00-1EFF;font-display:swap}
+@font-face{font-family:"Lalezar";src:url(../fonts/lalezar-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF;font-display:swap}
+@font-face{font-family:"Tajawal";font-weight:400;src:url(../fonts/tajawal-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-024F,U+2000-206F,U+20AC;font-display:swap}
+@font-face{font-family:"Tajawal";font-weight:500;src:url(../fonts/tajawal-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-024F,U+2000-206F,U+20AC;font-display:swap}
+@font-face{font-family:"Tajawal";font-weight:700;src:url(../fonts/tajawal-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-024F,U+2000-206F,U+20AC;font-display:swap}
+@font-face{font-family:"Tajawal";font-weight:800;src:url(../fonts/tajawal-latin-800-normal.woff2) format("woff2");unicode-range:U+0000-024F,U+2000-206F,U+20AC;font-display:swap}
+@font-face{font-family:"Tajawal";font-weight:400;src:url(../fonts/tajawal-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF;font-display:swap}
+@font-face{font-family:"Tajawal";font-weight:700;src:url(../fonts/tajawal-arabic-700-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF;font-display:swap}
+@font-face{font-family:"Tajawal";font-weight:800;src:url(../fonts/tajawal-arabic-800-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF;font-display:swap}
+
+:root{
+  --dz-green:#0B5E3A;      /* vert logo */
+  --dz-mint:#1F9A63;       /* vert des visuels */
+  --dz-mint-soft:#CFEBDD;
+  --dz-mustard:#E9B12F;    /* jaune moutarde des visuels */
+  --dz-mustard-soft:#FBE7B0;
+  --dz-wine:#6A1E2C;       /* sachet bâtonnets */
+  --dz-orange:#D8641E;     /* sachet burger */
+  --dz-paper:#FFFFFF;
+  --dz-ink:#10261C;
+  --dz-display:"Lalezar",system-ui,sans-serif;
+  --dz-body:"Tajawal",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --dz-radius-l:28px;--dz-radius-s:12px;
+  --dz-max:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--dz-body);font-size:17px;line-height:1.55;color:var(--dz-ink);background:var(--dz-paper);padding-bottom:42px}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--dz-mustard);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--dz-display);font-weight:400;line-height:1.02;margin:0;letter-spacing:.2px}
+p{margin:0 0 1em}
+.dz-wrap{max-width:var(--dz-max);margin:0 auto;padding:0 20px}
+.dz-ar{font-family:var(--dz-display);direction:rtl}
+
+/* En-tête */
+.dz-head{position:sticky;top:0;z-index:50;background:var(--dz-green);color:#fff}
+.dz-head .dz-wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.dz-logo img{height:40px;width:auto}
+.dz-nav{display:none;gap:4px}
+.dz-nav a{text-decoration:none;font-weight:700;padding:9px 14px;border-radius:999px;font-size:16px}
+.dz-nav a:hover{background:rgba(255,255,255,.12)}
+.dz-nav a[aria-current="page"]{background:var(--dz-mustard);color:var(--dz-ink)}
+.dz-burger{background:none;border:0;color:#fff;width:46px;height:46px;display:grid;place-items:center;cursor:pointer}
+.dz-burger span{display:block;width:24px;height:3px;background:#fff;border-radius:3px;box-shadow:0 8px 0 #fff,0 -8px 0 #fff}
+.dz-drawer{display:none;background:var(--dz-green);padding:6px 20px 18px}
+.dz-drawer.is-open{display:block}
+.dz-drawer a{display:block;color:#fff;text-decoration:none;font-family:var(--dz-display);font-size:28px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15)}
+@media(min-width:900px){.dz-nav{display:flex}.dz-burger,.dz-drawer,.dz-drawer.is-open{display:none}.dz-logo img{height:46px}}
+
+/* Boutons */
+.dz-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--dz-body);font-weight:800;font-size:17px;text-decoration:none;border:0;cursor:pointer;padding:15px 24px;border-radius:999px;background:var(--dz-mustard);color:var(--dz-ink);box-shadow:0 4px 0 #B9861B;transition:transform .12s}
+.dz-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #B9861B}
+.dz-btn--ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.7)}
+.dz-btn--ghost:active{box-shadow:inset 0 0 0 2px #fff}
+.dz-btn--green{background:var(--dz-green);color:#fff;box-shadow:0 4px 0 #063a24}
+
+/* Bande papier déchiré (comme sur leurs visuels) */
+.dz-paper-tag{display:inline-block;background:#fff;color:var(--dz-green);font-family:var(--dz-display);font-size:22px;padding:10px 22px 6px;transform:rotate(-2deg);
+  clip-path:polygon(0 8%,6% 0,14% 6%,22% 1%,31% 7%,40% 0,50% 6%,60% 1%,70% 7%,80% 0,90% 6%,100% 2%,99% 92%,92% 100%,83% 94%,74% 100%,64% 93%,54% 100%,44% 94%,34% 100%,24% 93%,14% 100%,5% 94%,1% 100%)}
+
+/* Héros */
+.dz-hero{background:var(--dz-mint);color:#fff;overflow:hidden;position:relative}
+.dz-hero::before{content:"";position:absolute;inset:auto -10% -30% 35%;height:80%;background:var(--dz-green);border-radius:50% 50% 0 0;transform:rotate(-8deg)}
+.dz-hero .dz-wrap{position:relative;display:grid;gap:10px;padding-top:34px;padding-bottom:40px}
+.dz-hero h1{font-size:clamp(46px,12vw,80px);max-width:12ch}
+.dz-hero .dz-ar{font-size:clamp(34px,8vw,58px);color:var(--dz-mustard);margin:4px 0 6px}
+.dz-hero p{font-size:19px;max-width:30ch;opacity:.95}
+.dz-hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.dz-hero-visual{position:relative;height:360px;margin-top:10px}
+.dz-hero-visual .dz-pack{position:absolute;width:250px;left:50%;top:30px;transform:translateX(-50%) rotate(-6deg);filter:drop-shadow(0 22px 26px rgba(0,0,0,.35))}
+.dz-piece{position:absolute;filter:drop-shadow(0 10px 12px rgba(0,0,0,.3))}
+.dz-hero-visual .p1{width:110px;left:4%;top:20px;transform:rotate(-24deg)}
+.dz-hero-visual .p2{width:96px;right:2%;top:150px;transform:rotate(18deg)}
+.dz-hero-visual .p3{width:120px;left:2%;bottom:0;transform:rotate(12deg)}
+@media(min-width:900px){
+  .dz-hero .dz-wrap{grid-template-columns:1.05fr 1fr;align-items:center;padding-top:60px;padding-bottom:70px}
+  .dz-hero-visual{height:520px;margin:0}
+  .dz-hero-visual .dz-pack{width:370px;top:40px}
+  .dz-hero-visual .p1{width:150px;left:0;top:10px}
+  .dz-hero-visual .p2{width:130px;right:0;top:220px}
+  .dz-hero-visual .p3{width:160px;left:6%;bottom:10px}
+}
+
+/* Pastilles qualité */
+.dz-proofs{background:var(--dz-green);color:#fff}
+.dz-proofs ul{list-style:none;margin:0;padding:18px 20px;display:grid;gap:12px;max-width:var(--dz-max);margin:0 auto}
+.dz-proofs li{display:flex;gap:12px;align-items:center;font-weight:700}
+.dz-proofs svg{flex:none;width:34px;height:34px}
+@media(min-width:900px){.dz-proofs ul{grid-template-columns:repeat(3,1fr);padding:22px 20px}}
+
+/* Sections */
+.dz-sec{padding:60px 0}
+.dz-sec h2{font-size:clamp(38px,8vw,64px);color:var(--dz-green)}
+.dz-lead{font-size:19px;max-width:52ch;margin-top:12px}
+.dz-sec--mustard{background:var(--dz-mustard)}
+.dz-sec--mustard h2{color:var(--dz-green)}
+.dz-sec--soft{background:var(--dz-mint-soft)}
+
+/* Gamme */
+.dz-range{display:grid;gap:18px;margin-top:30px}
+.dz-prod{border-radius:var(--dz-radius-l);color:#fff;overflow:hidden;text-decoration:none;display:grid;grid-template-rows:auto 1fr;position:relative}
+.dz-prod--nug{background:var(--dz-green)}
+.dz-prod--bat{background:var(--dz-wine)}
+.dz-prod--bur{background:var(--dz-orange)}
+.dz-prod-media{aspect-ratio:4/3;overflow:hidden;position:relative}
+.dz-prod-media img{width:100%;height:100%;object-fit:cover}
+.dz-prod--nug .dz-prod-media{display:grid;place-items:center;background:radial-gradient(circle at 50% 60%,#1F9A63 0,#0B5E3A 70%)}
+.dz-prod--nug .dz-prod-media img{width:62%;height:auto;object-fit:contain;transform:rotate(-5deg);filter:drop-shadow(0 16px 18px rgba(0,0,0,.35))}
+.dz-prod-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px}
+.dz-prod-body h3{font-size:34px}
+.dz-prod-body .dz-ar{font-size:24px;opacity:.85}
+.dz-prod-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.dz-chip{font-weight:700;font-size:14px;background:rgba(255,255,255,.16);padding:5px 12px;border-radius:999px}
+.dz-prod-link{margin-top:auto;padding-top:14px;font-weight:800;text-decoration:underline;text-underline-offset:4px}
+@media(min-width:900px){.dz-range{grid-template-columns:repeat(3,1fr)}}
+
+/* Cuisson */
+.dz-cook{display:grid;gap:26px;margin-top:26px;align-items:center}
+.dz-timer{background:var(--dz-green);color:#fff;border-radius:var(--dz-radius-l);padding:22px;box-shadow:0 10px 0 #063a24}
+.dz-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:rgba(255,255,255,.1);padding:5px;border-radius:999px}
+.dz-tabs button{border:0;background:none;color:#fff;font-family:var(--dz-body);font-weight:800;font-size:15px;padding:10px 6px;border-radius:999px;cursor:pointer}
+.dz-tabs button[aria-pressed="true"]{background:var(--dz-mustard);color:var(--dz-ink)}
+.dz-modes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.dz-modes button{border:2px solid rgba(255,255,255,.35);background:none;color:#fff;border-radius:16px;padding:12px;font-family:var(--dz-body);font-weight:800;font-size:16px;cursor:pointer;text-align:left}
+.dz-modes button small{display:block;font-weight:500;opacity:.8}
+.dz-modes button[aria-pressed="true"]{border-color:var(--dz-mustard);background:rgba(233,177,47,.15)}
+.dz-clock{font-family:var(--dz-display);font-size:88px;line-height:1;text-align:center;background:#0a3f28;border-radius:18px;padding:16px 8px 8px;font-variant-numeric:tabular-nums;letter-spacing:2px}
+.dz-clock small{display:block;font-family:var(--dz-body);font-size:14px;font-weight:700;letter-spacing:0;opacity:.75;padding-bottom:6px}
+.dz-timer .dz-btn{width:100%;margin-top:14px}
+.dz-cook-note{font-size:14px;opacity:.8;margin-top:10px;text-align:center}
+@media(min-width:900px){.dz-cook{grid-template-columns:1fr 1.05fr}}
+
+/* Recettes */
+.dz-recipes{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:28px}
+.dz-recipe{margin:0;background:#fff;border-radius:var(--dz-radius-s);overflow:hidden;box-shadow:0 6px 0 rgba(11,94,58,.25)}
+.dz-recipe img{aspect-ratio:1/1;width:100%;height:auto;object-fit:cover}
+.dz-recipe figcaption{padding:12px 14px 14px;font-weight:700;line-height:1.3}
+.dz-recipe figcaption span{display:block;font-weight:500;font-size:14px;opacity:.75;margin-top:3px}
+
+/* Astuce */
+.dz-tip{display:grid;gap:18px;align-items:center;background:#fff;border-radius:var(--dz-radius-l);padding:26px;border:3px solid var(--dz-green)}
+.dz-tip h3{font-size:34px;color:var(--dz-wine)}
+.dz-tip .dz-ar{font-size:26px;color:var(--dz-green)}
+@media(min-width:900px){.dz-tip{grid-template-columns:auto 1fr;padding:34px 40px}}
+
+/* Bandeau revendeurs */
+.dz-band{background:var(--dz-wine);color:#fff;border-radius:var(--dz-radius-l);padding:34px 26px;display:grid;gap:18px;position:relative;overflow:hidden}
+.dz-band h2{color:#fff}
+.dz-band img{position:absolute;right:-30px;bottom:-30px;width:180px;opacity:.95;transform:rotate(-20deg)}
+.dz-band p{max-width:42ch}
+@media(min-width:900px){.dz-band{padding:50px 56px}.dz-band img{width:260px;right:40px;bottom:-40px}}
+
+/* Pages internes */
+.dz-pagehead{background:var(--dz-mint);color:#fff;padding:44px 0 36px}
+.dz-pagehead h1{font-size:clamp(48px,11vw,84px)}
+.dz-pagehead p{font-size:19px;max-width:48ch;margin-top:10px}
+
+/* Fiche produit */
+.dz-sheet{display:grid;gap:26px;padding:56px 0;border-bottom:2px dashed rgba(11,94,58,.25);scroll-margin-top:80px}
+.dz-sheet:last-of-type{border-bottom:0}
+.dz-sheet-media{border-radius:var(--dz-radius-l);overflow:hidden;aspect-ratio:1/1;display:grid;place-items:center}
+.dz-sheet-media img{width:100%;height:100%;object-fit:cover}
+.dz-sheet-media.is-pack{background:radial-gradient(circle at 50% 55%,#1F9A63,#0B5E3A 72%)}
+.dz-sheet-media.is-pack img{width:70%;height:auto;object-fit:contain;filter:drop-shadow(0 20px 22px rgba(0,0,0,.35))}
+.dz-sheet h2{font-size:clamp(44px,9vw,70px)}
+.dz-sheet .dz-ar{font-size:30px;margin:4px 0 14px}
+.dz-specs{list-style:none;padding:0;margin:18px 0;display:grid;gap:10px}
+.dz-specs li{display:grid;grid-template-columns:130px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid rgba(16,38,28,.12)}
+.dz-specs b{color:var(--dz-green)}
+@media(min-width:900px){.dz-sheet{grid-template-columns:1fr 1.1fr;align-items:center;gap:56px}.dz-sheet:nth-of-type(even) .dz-sheet-media{order:2}}
+
+/* Formulaires */
+.dz-form{display:grid;gap:14px;background:#fff;border-radius:var(--dz-radius-l);padding:24px;border:3px solid var(--dz-green)}
+.dz-form label{display:grid;gap:6px;font-weight:700}
+.dz-form input,.dz-form select,.dz-form textarea{font:inherit;font-weight:500;padding:13px 14px;border-radius:12px;border:2px solid #BFD8CB;background:#fff;color:var(--dz-ink);width:100%}
+.dz-form input:focus,.dz-form select:focus,.dz-form textarea:focus{outline:none;border-color:var(--dz-mint)}
+.dz-form .dz-row{display:grid;gap:14px}
+@media(min-width:700px){.dz-form .dz-row{grid-template-columns:1fr 1fr}}
+.dz-checks{display:flex;flex-wrap:wrap;gap:8px;border:0;padding:0;margin:0}
+.dz-checks legend{font-weight:700;margin-bottom:8px}
+.dz-checks label{display:flex;align-items:center;gap:8px;font-weight:600;background:var(--dz-mint-soft);padding:9px 14px;border-radius:999px;cursor:pointer}
+.dz-checks input{width:auto;accent-color:var(--dz-green)}
+.dz-ok{display:none;background:var(--dz-mint-soft);border-radius:16px;padding:18px;font-weight:700;color:var(--dz-green)}
+.dz-ok.is-on{display:block}
+
+.dz-two{display:grid;gap:30px}
+@media(min-width:900px){.dz-two{grid-template-columns:1fr 1.1fr;align-items:start}}
+.dz-info{list-style:none;padding:0;margin:20px 0;display:grid;gap:14px}
+.dz-info li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start}
+.dz-info svg{width:26px;height:26px;color:var(--dz-green)}
+.dz-info a{font-weight:700}
+.dz-map{border:0;width:100%;height:340px;border-radius:var(--dz-radius-l);display:block;background:var(--dz-mint-soft)}
+
+/* Pied */
+.dz-foot{background:var(--dz-green);color:#fff;padding:44px 0 30px;margin-top:0}
+.dz-foot .dz-wrap{display:grid;gap:26px}
+.dz-foot img{height:54px;width:auto}
+.dz-foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+.dz-foot a{text-decoration:none;font-weight:700}
+.dz-foot small{opacity:.7}
+@media(min-width:900px){.dz-foot .dz-wrap{grid-template-columns:1fr auto;align-items:center}}
+
+/* Démo Webminds */
+.wm-demo{position:fixed;left:0;right:0;bottom:0;z-index:90;background:#141414;color:#fff;font:600 12.5px/1.3 var(--dz-body);text-align:center;padding:10px 12px;letter-spacing:.1px}
+.wm-switch{position:fixed;left:14px;bottom:52px;z-index:91;display:flex;align-items:center;gap:8px;background:#fff;color:var(--dz-ink);text-decoration:none;font:800 14px var(--dz-body);padding:11px 16px 11px 12px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.25);animation:wmPulse 2.6s ease-in-out infinite}
+.wm-switch i{width:12px;height:12px;border-radius:50%;background:var(--dz-mustard);box-shadow:0 0 0 4px rgba(233,177,47,.3)}
+@keyframes wmPulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){.wm-switch{animation:none}html{scroll-behavior:auto}}

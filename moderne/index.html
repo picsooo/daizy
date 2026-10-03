@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Dayzy · Croque l'écran</title>
+<meta name="description" content="Dayzy, le poulet croustillant prêt en quelques minutes. Version immersive.">
+<meta name="theme-color" content="#0B5E3A">
+<link rel="preload" href="../fonts/lalezar-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="moderne.css">
+</head>
+<body>
+<header class="mx-top">
+  <a href="../index.html" aria-label="Dayzy, accueil"><img src="../img/logo_white.webp" alt="Dayzy دايزي" width="200" height="113"></a>
+  <button class="mx-sound" aria-pressed="false" data-sound><span class="mx-sound-dot"></span><span data-sound-label>Son coupé</span></button>
+</header>
+
+<main>
+  <!-- 1. Croque l'écran -->
+  <section class="mx-crunch" id="croque" data-theme="green">
+    <p class="mx-giant" aria-hidden="true">CRUNCH</p>
+    <div class="mx-crunch-text">
+      <h1>Croque l'écran.</h1>
+      <p>Touche les morceaux pour les croquer.</p>
+      <p class="mx-count" aria-live="polite"><b data-count>0</b> / <span data-total>6</span> croqués</p>
+    </div>
+    <div class="mx-field" data-field>
+      <canvas class="mx-bit" data-src="../img/stick-a.webp" data-x="8" data-y="14" data-w="26" data-r="-28" aria-label="Bâtonnet à croquer" role="button" tabindex="0"></canvas>
+      <canvas class="mx-bit" data-src="../img/nug-a.webp" data-x="66" data-y="8" data-w="26" data-r="14" aria-label="Nugget à croquer" role="button" tabindex="0"></canvas>
+      <canvas class="mx-bit" data-src="../img/nug-c.webp" data-x="70" data-y="52" data-w="22" data-r="-8" aria-label="Nugget à croquer" role="button" tabindex="0"></canvas>
+      <canvas class="mx-bit" data-src="../img/stick-c.webp" data-x="4" data-y="58" data-w="30" data-r="22" aria-label="Bâtonnet à croquer" role="button" tabindex="0"></canvas>
+      <canvas class="mx-bit" data-src="../img/nug-b.webp" data-x="36" data-y="70" data-w="20" data-r="6" aria-label="Nugget à croquer" role="button" tabindex="0"></canvas>
+      <canvas class="mx-bit" data-src="../img/sticks-b.webp" data-x="38" data-y="30" data-w="30" data-r="-6" aria-label="Bâtonnets à croquer" role="button" tabindex="0"></canvas>
+    </div>
+    <div class="mx-reveal" data-reveal hidden>
+      <img src="../img/pack_nuggets.webp" alt="Sachet Dayzy Nuggets de poulet 300 g" width="556" height="564">
+      <p class="mx-ar" lang="ar">البنة EAZY</p>
+      <p>Tout croqué. Il en reste dans le sachet.</p>
+      <a class="mx-btn" href="#gamme">Voir la gamme</a>
+    </div>
+    <a class="mx-skip" href="#gamme">Passer</a>
+  </section>
+
+  <!-- 2. Choisis ton Dayzy -->
+  <section class="mx-range" id="gamme" data-prod="nug">
+    <div class="mx-range-in">
+      <div class="mx-range-copy">
+        <span class="mx-tag">Choisis ton Dayzy</span>
+        <h2 data-p-name>Nuggets de poulet</h2>
+        <p class="mx-ar" lang="ar" data-p-ar>نوقتس الدجاج</p>
+        <p data-p-txt>Aux filets de poulet, panure extra croustillante. Le classique des assiettes du soir.</p>
+        <ul class="mx-facts">
+          <li><b data-p-w>300 g</b><span>le sachet</span></li>
+          <li><b>3–5</b><span>min à la poêle</span></li>
+          <li><b>0</b><span>colorant, conservateur</span></li>
+        </ul>
+      </div>
+      <div class="mx-range-media"><img data-p-img src="../img/pack_nuggets.webp" alt="Sachet Dayzy Nuggets de poulet" width="556" height="564"></div>
+    </div>
+    <div class="mx-switch" role="tablist" aria-label="Produits">
+      <button role="tab" aria-selected="true" data-k="nug">Nuggets</button>
+      <button role="tab" aria-selected="false" data-k="bat">Bâtonnets</button>
+      <button role="tab" aria-selected="false" data-k="bur">Burger</button>
+    </div>
+  </section>
+
+  <!-- 3. Chrono -->
+  <section class="mx-timer" id="chrono">
+    <div class="mx-timer-in">
+      <div>
+        <h2>5 minutes.<br>Pas une de plus.</h2>
+        <p class="mx-ar" lang="ar">دايزي في وقت قصير</p>
+        <p>Choisis la poêle ou le four, lance le minuteur. Démonstration accélérée : une seconde vaut une minute.</p>
+        <div class="mx-modes" role="group" aria-label="Mode de cuisson">
+          <button aria-pressed="true" data-m="poele">Poêle · 3 à 5 min</button>
+          <button aria-pressed="false" data-m="four">Four · 20 à 25 min</button>
+        </div>
+      </div>
+      <div class="mx-device">
+        <div class="mx-screen"><span data-clock>5:00</span><small>minutes</small></div>
+        <div class="mx-keys"><button data-start aria-label="Lancer le minuteur"></button><button data-reset aria-label="Remettre à zéro"></button><button data-plus aria-label="Ajouter une minute"></button></div>
+        <p class="mx-ready" data-ready aria-live="polite">Ready</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Assiettes -->
+  <section class="mx-plates" id="assiettes">
+    <h2>Dans l'assiette</h2>
+    <div class="mx-rail" tabindex="0" aria-label="Idées d'assiettes, faire défiler">
+      <figure><img src="../img/recette-salade-cesar.webp" alt="Salade César aux bâtonnets Dayzy" loading="lazy" width="500" height="480"><figcaption>Salade César aux bâtonnets</figcaption></figure>
+      <figure><img src="../img/recette-batonnets-puree.webp" alt="Bâtonnets Dayzy, purée et salade de tomates" loading="lazy" width="500" height="480"><figcaption>Bâtonnets, purée, tomates</figcaption></figure>
+      <figure><img src="../img/recette-nuggets-riz.webp" alt="Nuggets Dayzy, riz blanc et salade" loading="lazy" width="500" height="480"><figcaption>Nuggets, riz blanc, salade</figcaption></figure>
+      <figure><img src="../img/recette-nuggets-pates.webp" alt="Nuggets Dayzy, pâtes et brocolis" loading="lazy" width="500" height="480"><figcaption>Nuggets, pâtes, brocolis</figcaption></figure>
+      <figure><img src="../img/match-batonnets.webp" alt="Bâtonnets Dayzy et frites devant un match" loading="lazy" width="500" height="580"><figcaption>Bâtonnets devant le match</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 5. Revendeurs / contact -->
+  <section class="mx-end">
+    <h2>Dayzy dans ton magasin ?</h2>
+    <p>Supérettes, épiceries, grossistes, fast-foods : l'équipe commerciale te rappelle.</p>
+    <div class="mx-end-ctas">
+      <a class="mx-btn" href="../revendeurs.html">Devenir revendeur</a>
+      <a class="mx-btn mx-btn--line" href="tel:+213560649044">0560 64 90 44</a>
+    </div>
+    <p class="mx-addr">Benkhelil, Blida · <a href="https://www.instagram.com/dayzy.dz/" target="_blank" rel="noopener">@dayzy.dz</a></p>
+  </section>
+</main>
+
+<a class="wm-switch" href="../index.html"><i></i>Découvrir la version corporate</a>
+<div class="wm-demo" role="note">Maquette de démonstration réalisée par Webminds · aucun formulaire n'est enregistré</div>
+<script src="moderne.js"></script>
+</body>
+</html>
